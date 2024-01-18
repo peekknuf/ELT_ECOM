@@ -1,0 +1,63 @@
+
+version: 2
+
+models:
+  - name: OBT_ECOM
+    description: "unified data"
+    columns:
+      - name: id
+        tests: 
+          - unique
+          - not_null
+      - name: timestamp
+        tests: 
+          - not_null
+      - name: product_name 
+      - name: price
+      - name: quantity
+      - name: category 
+      - name: customer_name 
+      - name: customer_age
+      - name: email
+      - name: address
+      - name: country
+      - name: payment_method
+      - name: phone_number
+      - name: discount_applied
+      - name: shipping_method
+      - name: order_status
+      
+
+  - name: revenue
+    description: "prep for dashboard"
+    columns:
+      - name: id
+      - name: timestamp
+      - name: product_name 
+      - name: price
+      - name: quantity
+      - name: revenue
+      - name: category 
+      - name: customer_name 
+      - name: customer_age
+      - name: email
+      - name: address
+      - name: country
+      - name: payment_method
+      - name: phone_number
+      - name: discount_applied
+      - name: shipping_method
+      - name: order_status
+
+  - name: aggregates
+    description: "aggregates for dashboard"
+    columns:
+      - name: order_year
+      - name: order_month
+      - name: total_orders
+      - name: total_items_sold
+      - name: total_revenue 
+      - name: avg_price
+      - name: max_revenue
+      - name: min_revenue
+      - name: avg_discount_applied 
