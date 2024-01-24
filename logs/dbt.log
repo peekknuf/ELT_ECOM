@@ -6790,3 +6790,455 @@ having count(*) > 1
 [0m01:32:36.337895 [debug] [MainThread]: Command `cli test` failed at 01:32:36.337657 after 1.74 seconds
 [0m01:32:36.338572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8379f3c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc82a837490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8355d5180>]}
 [0m01:32:36.339225 [debug] [MainThread]: Flushing usage events
+[0m17:28:48.183392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b0385aad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b01566380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b01566320>]}
+
+
+============================== 17:28:48.187341 | ec55b474-d581-4dc2-9135-1204a0a1d6c6 ==============================
+[0m17:28:48.187341 [info ] [MainThread]: Running with dbt=1.7.2
+[0m17:28:48.188136 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/peek/code/ecom/logs', 'profiles_dir': '/home/peek/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:28:48.360575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ec55b474-d581-4dc2-9135-1204a0a1d6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b015665c0>]}
+[0m17:28:48.424848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ec55b474-d581-4dc2-9135-1204a0a1d6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b013dbc70>]}
+[0m17:28:48.426092 [info ] [MainThread]: Registered adapter: duckdb=1.7.0
+[0m17:28:48.431598 [debug] [MainThread]: checksum: 61e99fc04fd80d06ce91efefd25c0802dcce8a048167599a1a188233d6ce8ed9, vars: {}, profile: , target: , version: 1.7.2
+[0m17:28:48.449482 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:28:48.450011 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:28:48.513931 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ecom.example
+[0m17:28:48.518396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ec55b474-d581-4dc2-9135-1204a0a1d6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6af646c0d0>]}
+[0m17:28:48.526356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ec55b474-d581-4dc2-9135-1204a0a1d6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6af652f0a0>]}
+[0m17:28:48.526928 [info ] [MainThread]: Found 11 seeds, 3 models, 3 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m17:28:48.527317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ec55b474-d581-4dc2-9135-1204a0a1d6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6af652f130>]}
+[0m17:28:48.528702 [info ] [MainThread]: 
+[0m17:28:48.529481 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:28:48.531126 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ecom_main'
+[0m17:28:48.539788 [debug] [ThreadPool]: Using duckdb connection "list_ecom_main"
+[0m17:28:48.540358 [debug] [ThreadPool]: On list_ecom_main: BEGIN
+[0m17:28:48.540686 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:28:48.555429 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:28:48.556047 [debug] [MainThread]: Connection 'list_ecom_main' was properly closed.
+[0m17:28:48.556440 [info ] [MainThread]: 
+[0m17:28:48.556811 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.03 seconds (0.03s).
+[0m17:28:48.557263 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/home/peek/ecom.db": Resource temporarily unavailable
+[0m17:28:48.558496 [debug] [MainThread]: Resource report: {"command_name": "test", "command_wall_clock_time": 0.40789634, "process_user_time": 1.816835, "process_kernel_time": 0.049913, "process_mem_max_rss": "142316", "process_in_blocks": "4504", "process_out_blocks": "864", "command_success": false}
+[0m17:28:48.559036 [debug] [MainThread]: Command `dbt test` failed at 17:28:48.558892 after 0.41 seconds
+[0m17:28:48.559406 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b0385aad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6af652f070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6af64b7c70>]}
+[0m17:28:48.559819 [debug] [MainThread]: Flushing usage events
+[0m17:28:59.162137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2cd8fe9570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2cd6cea3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2cd6cea350>]}
+
+
+============================== 17:28:59.164590 | 21c11599-2527-4116-baa7-b9c4ea18f122 ==============================
+[0m17:28:59.164590 [info ] [MainThread]: Running with dbt=1.7.2
+[0m17:28:59.165069 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/peek/code/ecom/logs', 'version_check': 'True', 'profiles_dir': '/home/peek/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:28:59.326494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '21c11599-2527-4116-baa7-b9c4ea18f122', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2cd6c61a20>]}
+[0m17:28:59.390869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '21c11599-2527-4116-baa7-b9c4ea18f122', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2cd6b76470>]}
+[0m17:28:59.391620 [info ] [MainThread]: Registered adapter: duckdb=1.7.0
+[0m17:28:59.396712 [debug] [MainThread]: checksum: 61e99fc04fd80d06ce91efefd25c0802dcce8a048167599a1a188233d6ce8ed9, vars: {}, profile: , target: , version: 1.7.2
+[0m17:28:59.413734 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:28:59.414246 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:28:59.478760 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ecom.example
+[0m17:28:59.483137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '21c11599-2527-4116-baa7-b9c4ea18f122', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ccbc700d0>]}
+[0m17:28:59.490715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '21c11599-2527-4116-baa7-b9c4ea18f122', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ccbd330d0>]}
+[0m17:28:59.491265 [info ] [MainThread]: Found 11 seeds, 3 models, 3 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m17:28:59.491646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '21c11599-2527-4116-baa7-b9c4ea18f122', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ccbd33160>]}
+[0m17:28:59.492997 [info ] [MainThread]: 
+[0m17:28:59.493711 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:28:59.495282 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ecom_main'
+[0m17:28:59.504321 [debug] [ThreadPool]: Using duckdb connection "list_ecom_main"
+[0m17:28:59.504878 [debug] [ThreadPool]: On list_ecom_main: BEGIN
+[0m17:28:59.505225 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:28:59.519295 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m17:28:59.519830 [debug] [ThreadPool]: Using duckdb connection "list_ecom_main"
+[0m17:28:59.520259 [debug] [ThreadPool]: On list_ecom_main: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "connection_name": "list_ecom_main"} */
+select
+      'ecom' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'ecom'
+  
+[0m17:28:59.534211 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m17:28:59.539693 [debug] [ThreadPool]: On list_ecom_main: ROLLBACK
+[0m17:28:59.540876 [debug] [ThreadPool]: Failed to rollback 'list_ecom_main'
+[0m17:28:59.541375 [debug] [ThreadPool]: On list_ecom_main: Close
+[0m17:28:59.547694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '21c11599-2527-4116-baa7-b9c4ea18f122', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ccbd32d40>]}
+[0m17:28:59.548262 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:28:59.548587 [debug] [MainThread]: On master: BEGIN
+[0m17:28:59.548892 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:28:59.555396 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:28:59.555822 [debug] [MainThread]: On master: COMMIT
+[0m17:28:59.556138 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:28:59.556456 [debug] [MainThread]: On master: COMMIT
+[0m17:28:59.556821 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:28:59.557148 [debug] [MainThread]: On master: Close
+[0m17:28:59.559139 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:28:59.559516 [info ] [MainThread]: 
+[0m17:28:59.561627 [debug] [Thread-1 (]: Began running node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:28:59.562230 [info ] [Thread-1 (]: 1 of 3 START test not_null_OBT_ECOM_id ......................................... [RUN]
+[0m17:28:59.563080 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6'
+[0m17:28:59.563436 [debug] [Thread-1 (]: Began compiling node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:28:59.579846 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:28:59.581302 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6 (compile): 17:28:59.563703 => 17:28:59.580978
+[0m17:28:59.581769 [debug] [Thread-1 (]: Began executing node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:28:59.593089 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:28:59.594386 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:28:59.594845 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: BEGIN
+[0m17:28:59.595205 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:28:59.602162 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:28:59.602680 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:28:59.603052 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "node_id": "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select id
+from "ecom"."main"."OBT_ECOM"
+where id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m17:28:59.605113 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:28:59.607585 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6 (execute): 17:28:59.582016 => 17:28:59.607363
+[0m17:28:59.607985 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: ROLLBACK
+[0m17:28:59.608410 [debug] [Thread-1 (]: Failed to rollback 'test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6'
+[0m17:28:59.608769 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: Close
+[0m17:28:59.611342 [info ] [Thread-1 (]: 1 of 3 PASS not_null_OBT_ECOM_id ............................................... [[32mPASS[0m in 0.05s]
+[0m17:28:59.611915 [debug] [Thread-1 (]: Finished running node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:28:59.612345 [debug] [Thread-1 (]: Began running node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:28:59.612727 [info ] [Thread-1 (]: 2 of 3 START test not_null_OBT_ECOM_timestamp .................................. [RUN]
+[0m17:28:59.613674 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6, now test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95)
+[0m17:28:59.614233 [debug] [Thread-1 (]: Began compiling node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:28:59.617853 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:28:59.618465 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95 (compile): 17:28:59.614574 => 17:28:59.618264
+[0m17:28:59.618849 [debug] [Thread-1 (]: Began executing node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:28:59.620791 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:28:59.621431 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:28:59.621800 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: BEGIN
+[0m17:28:59.622146 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:28:59.630301 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:28:59.631087 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:28:59.631641 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "node_id": "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select timestamp
+from "ecom"."main"."OBT_ECOM"
+where timestamp is null
+
+
+
+      
+    ) dbt_internal_test
+[0m17:28:59.632811 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:28:59.634678 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95 (execute): 17:28:59.619084 => 17:28:59.634380
+[0m17:28:59.635357 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: ROLLBACK
+[0m17:28:59.635796 [debug] [Thread-1 (]: Failed to rollback 'test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95'
+[0m17:28:59.636148 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: Close
+[0m17:28:59.638900 [info ] [Thread-1 (]: 2 of 3 PASS not_null_OBT_ECOM_timestamp ........................................ [[32mPASS[0m in 0.03s]
+[0m17:28:59.639515 [debug] [Thread-1 (]: Finished running node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:28:59.639959 [debug] [Thread-1 (]: Began running node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:28:59.640460 [info ] [Thread-1 (]: 3 of 3 START test unique_OBT_ECOM_id ........................................... [RUN]
+[0m17:28:59.641280 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95, now test.ecom.unique_OBT_ECOM_id.d0ccddc384)
+[0m17:28:59.641717 [debug] [Thread-1 (]: Began compiling node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:28:59.647555 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:28:59.648265 [debug] [Thread-1 (]: Timing info for test.ecom.unique_OBT_ECOM_id.d0ccddc384 (compile): 17:28:59.642006 => 17:28:59.648056
+[0m17:28:59.648683 [debug] [Thread-1 (]: Began executing node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:28:59.650940 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:28:59.651517 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:28:59.651884 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: BEGIN
+[0m17:28:59.652228 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:28:59.658957 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:28:59.659639 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:28:59.660096 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "node_id": "test.ecom.unique_OBT_ECOM_id.d0ccddc384"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "ecom"."main"."OBT_ECOM"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m17:28:59.974175 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:28:59.976084 [debug] [Thread-1 (]: Timing info for test.ecom.unique_OBT_ECOM_id.d0ccddc384 (execute): 17:28:59.648938 => 17:28:59.975790
+[0m17:28:59.976552 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: ROLLBACK
+[0m17:28:59.977001 [debug] [Thread-1 (]: Failed to rollback 'test.ecom.unique_OBT_ECOM_id.d0ccddc384'
+[0m17:28:59.977364 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: Close
+[0m17:28:59.991224 [error] [Thread-1 (]: 3 of 3 FAIL 80000 unique_OBT_ECOM_id ........................................... [[31mFAIL 80000[0m in 0.35s]
+[0m17:28:59.991876 [debug] [Thread-1 (]: Finished running node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:28:59.994172 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:28:59.994592 [debug] [MainThread]: On master: BEGIN
+[0m17:28:59.994924 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:29:00.001535 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:29:00.002083 [debug] [MainThread]: On master: COMMIT
+[0m17:29:00.002492 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:29:00.002853 [debug] [MainThread]: On master: COMMIT
+[0m17:29:00.003277 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:29:00.003691 [debug] [MainThread]: On master: Close
+[0m17:29:00.006524 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:29:00.006970 [debug] [MainThread]: Connection 'list_ecom_main' was properly closed.
+[0m17:29:00.007324 [debug] [MainThread]: Connection 'test.ecom.unique_OBT_ECOM_id.d0ccddc384' was properly closed.
+[0m17:29:00.007739 [info ] [MainThread]: 
+[0m17:29:00.008155 [info ] [MainThread]: Finished running 3 tests in 0 hours 0 minutes and 0.51 seconds (0.51s).
+[0m17:29:00.008993 [debug] [MainThread]: Command end result
+[0m17:29:00.021476 [info ] [MainThread]: 
+[0m17:29:00.022327 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m17:29:00.022996 [info ] [MainThread]: 
+[0m17:29:00.023711 [error] [MainThread]: [31mFailure in test unique_OBT_ECOM_id (models/schema.yml)[0m
+[0m17:29:00.024324 [error] [MainThread]:   Got 80000 results, configured to fail if != 0
+[0m17:29:00.024869 [info ] [MainThread]: 
+[0m17:29:00.025393 [info ] [MainThread]:   compiled Code at target/compiled/ecom/models/schema.yml/unique_OBT_ECOM_id.sql
+[0m17:29:00.025937 [info ] [MainThread]: 
+[0m17:29:00.026488 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[0m17:29:00.027633 [debug] [MainThread]: Resource report: {"command_name": "test", "command_wall_clock_time": 0.89699346, "process_user_time": 4.4152, "process_kernel_time": 0.543409, "process_mem_max_rss": "557372", "process_in_blocks": "469904", "process_out_blocks": "1744", "command_success": false}
+[0m17:29:00.028331 [debug] [MainThread]: Command `dbt test` failed at 17:29:00.028186 after 0.90 seconds
+[0m17:29:00.028782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2cd8fe9570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ccbb26380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ccbb25720>]}
+[0m17:29:00.029291 [debug] [MainThread]: Flushing usage events
+[0m17:31:32.195467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742c50d570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a21a3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a21a350>]}
+
+
+============================== 17:31:32.197652 | cd0ad365-4bac-4534-92db-899ed416bfe4 ==============================
+[0m17:31:32.197652 [info ] [MainThread]: Running with dbt=1.7.2
+[0m17:31:32.198249 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/peek/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/peek/code/ecom/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt test', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:31:32.354600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cd0ad365-4bac-4534-92db-899ed416bfe4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a191a20>]}
+[0m17:31:32.419183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cd0ad365-4bac-4534-92db-899ed416bfe4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a0a6470>]}
+[0m17:31:32.419993 [info ] [MainThread]: Registered adapter: duckdb=1.7.0
+[0m17:31:32.425611 [debug] [MainThread]: checksum: 61e99fc04fd80d06ce91efefd25c0802dcce8a048167599a1a188233d6ce8ed9, vars: {}, profile: , target: , version: 1.7.2
+[0m17:31:32.509880 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:31:32.510349 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:31:32.511124 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ecom.example
+[0m17:31:32.515660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cd0ad365-4bac-4534-92db-899ed416bfe4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f741f1700d0>]}
+[0m17:31:32.523524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cd0ad365-4bac-4534-92db-899ed416bfe4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f741f37df90>]}
+[0m17:31:32.524101 [info ] [MainThread]: Found 11 seeds, 3 models, 3 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m17:31:32.524483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cd0ad365-4bac-4534-92db-899ed416bfe4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a0b6b60>]}
+[0m17:31:32.525850 [info ] [MainThread]: 
+[0m17:31:32.526551 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:31:32.528363 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ecom_main'
+[0m17:31:32.537243 [debug] [ThreadPool]: Using duckdb connection "list_ecom_main"
+[0m17:31:32.537773 [debug] [ThreadPool]: On list_ecom_main: BEGIN
+[0m17:31:32.538096 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:31:32.547485 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m17:31:32.548024 [debug] [ThreadPool]: Using duckdb connection "list_ecom_main"
+[0m17:31:32.548393 [debug] [ThreadPool]: On list_ecom_main: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "connection_name": "list_ecom_main"} */
+select
+      'ecom' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'ecom'
+  
+[0m17:31:32.558800 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m17:31:32.562138 [debug] [ThreadPool]: On list_ecom_main: ROLLBACK
+[0m17:31:32.562694 [debug] [ThreadPool]: Failed to rollback 'list_ecom_main'
+[0m17:31:32.563043 [debug] [ThreadPool]: On list_ecom_main: Close
+[0m17:31:32.568564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cd0ad365-4bac-4534-92db-899ed416bfe4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f741f136410>]}
+[0m17:31:32.569140 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:31:32.569461 [debug] [MainThread]: On master: BEGIN
+[0m17:31:32.569768 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:31:32.576590 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:31:32.577014 [debug] [MainThread]: On master: COMMIT
+[0m17:31:32.577343 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:31:32.577662 [debug] [MainThread]: On master: COMMIT
+[0m17:31:32.578044 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:31:32.578380 [debug] [MainThread]: On master: Close
+[0m17:31:32.580280 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:31:32.580665 [info ] [MainThread]: 
+[0m17:31:32.582855 [debug] [Thread-1 (]: Began running node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:31:32.583433 [info ] [Thread-1 (]: 1 of 3 START test not_null_OBT_ECOM_id ......................................... [RUN]
+[0m17:31:32.584259 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6'
+[0m17:31:32.584621 [debug] [Thread-1 (]: Began compiling node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:31:32.596893 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:31:32.597861 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6 (compile): 17:31:32.584850 => 17:31:32.597553
+[0m17:31:32.598348 [debug] [Thread-1 (]: Began executing node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:31:32.609591 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:31:32.610358 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:31:32.610771 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: BEGIN
+[0m17:31:32.611124 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:31:32.618273 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:31:32.618833 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"
+[0m17:31:32.619206 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "node_id": "test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select id
+from "ecom"."main"."OBT_ECOM"
+where id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m17:31:32.620425 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:31:32.622253 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6 (execute): 17:31:32.598622 => 17:31:32.622033
+[0m17:31:32.622639 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: ROLLBACK
+[0m17:31:32.623058 [debug] [Thread-1 (]: Failed to rollback 'test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6'
+[0m17:31:32.623411 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6: Close
+[0m17:31:32.625873 [info ] [Thread-1 (]: 1 of 3 PASS not_null_OBT_ECOM_id ............................................... [[32mPASS[0m in 0.04s]
+[0m17:31:32.626422 [debug] [Thread-1 (]: Finished running node test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6
+[0m17:31:32.626845 [debug] [Thread-1 (]: Began running node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:31:32.627312 [info ] [Thread-1 (]: 2 of 3 START test not_null_OBT_ECOM_timestamp .................................. [RUN]
+[0m17:31:32.627871 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecom.not_null_OBT_ECOM_id.4f2a4de7d6, now test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95)
+[0m17:31:32.628227 [debug] [Thread-1 (]: Began compiling node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:31:32.631713 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:31:32.632314 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95 (compile): 17:31:32.628452 => 17:31:32.632118
+[0m17:31:32.632673 [debug] [Thread-1 (]: Began executing node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:31:32.634619 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:31:32.635221 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:31:32.635595 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: BEGIN
+[0m17:31:32.635943 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:31:32.642397 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:31:32.642943 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"
+[0m17:31:32.643310 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "node_id": "test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select timestamp
+from "ecom"."main"."OBT_ECOM"
+where timestamp is null
+
+
+
+      
+    ) dbt_internal_test
+[0m17:31:32.644329 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:31:32.645875 [debug] [Thread-1 (]: Timing info for test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95 (execute): 17:31:32.632899 => 17:31:32.645633
+[0m17:31:32.646315 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: ROLLBACK
+[0m17:31:32.646735 [debug] [Thread-1 (]: Failed to rollback 'test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95'
+[0m17:31:32.647097 [debug] [Thread-1 (]: On test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95: Close
+[0m17:31:32.649655 [info ] [Thread-1 (]: 2 of 3 PASS not_null_OBT_ECOM_timestamp ........................................ [[32mPASS[0m in 0.02s]
+[0m17:31:32.650264 [debug] [Thread-1 (]: Finished running node test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95
+[0m17:31:32.650725 [debug] [Thread-1 (]: Began running node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:31:32.651301 [info ] [Thread-1 (]: 3 of 3 START test unique_OBT_ECOM_id ........................................... [RUN]
+[0m17:31:32.652053 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecom.not_null_OBT_ECOM_timestamp.0f0bd2dc95, now test.ecom.unique_OBT_ECOM_id.d0ccddc384)
+[0m17:31:32.652525 [debug] [Thread-1 (]: Began compiling node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:31:32.660671 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:31:32.661831 [debug] [Thread-1 (]: Timing info for test.ecom.unique_OBT_ECOM_id.d0ccddc384 (compile): 17:31:32.652773 => 17:31:32.661439
+[0m17:31:32.662475 [debug] [Thread-1 (]: Began executing node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:31:32.665219 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:31:32.665916 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:31:32.666379 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: BEGIN
+[0m17:31:32.666765 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:31:32.673840 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:31:32.674388 [debug] [Thread-1 (]: Using duckdb connection "test.ecom.unique_OBT_ECOM_id.d0ccddc384"
+[0m17:31:32.674772 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: /* {"app": "dbt", "dbt_version": "1.7.2", "profile_name": "ecom", "target_name": "dev", "node_id": "test.ecom.unique_OBT_ECOM_id.d0ccddc384"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "ecom"."main"."OBT_ECOM"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m17:31:32.952459 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m17:31:32.954542 [debug] [Thread-1 (]: Timing info for test.ecom.unique_OBT_ECOM_id.d0ccddc384 (execute): 17:31:32.662839 => 17:31:32.954243
+[0m17:31:32.955138 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: ROLLBACK
+[0m17:31:32.955676 [debug] [Thread-1 (]: Failed to rollback 'test.ecom.unique_OBT_ECOM_id.d0ccddc384'
+[0m17:31:32.956100 [debug] [Thread-1 (]: On test.ecom.unique_OBT_ECOM_id.d0ccddc384: Close
+[0m17:31:32.970704 [warn ] [Thread-1 (]: 3 of 3 WARN 80000 unique_OBT_ECOM_id ........................................... [[33mWARN 80000[0m in 0.32s]
+[0m17:31:32.971601 [debug] [Thread-1 (]: Finished running node test.ecom.unique_OBT_ECOM_id.d0ccddc384
+[0m17:31:32.973377 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:31:32.974000 [debug] [MainThread]: On master: BEGIN
+[0m17:31:32.974389 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:31:32.981940 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:31:32.982660 [debug] [MainThread]: On master: COMMIT
+[0m17:31:32.983118 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:31:32.983578 [debug] [MainThread]: On master: COMMIT
+[0m17:31:32.984107 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m17:31:32.984520 [debug] [MainThread]: On master: Close
+[0m17:31:32.987357 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:31:32.987760 [debug] [MainThread]: Connection 'list_ecom_main' was properly closed.
+[0m17:31:32.988119 [debug] [MainThread]: Connection 'test.ecom.unique_OBT_ECOM_id.d0ccddc384' was properly closed.
+[0m17:31:32.988540 [info ] [MainThread]: 
+[0m17:31:32.988966 [info ] [MainThread]: Finished running 3 tests in 0 hours 0 minutes and 0.46 seconds (0.46s).
+[0m17:31:32.989870 [debug] [MainThread]: Command end result
+[0m17:31:33.000194 [info ] [MainThread]: 
+[0m17:31:33.001066 [info ] [MainThread]: [33mCompleted with 1 warning:[0m
+[0m17:31:33.001619 [info ] [MainThread]: 
+[0m17:31:33.002126 [warn ] [MainThread]: [33mWarning in test unique_OBT_ECOM_id (models/schema.yml)[0m
+[0m17:31:33.002591 [warn ] [MainThread]: Got 80000 results, configured to warn if != 0
+[0m17:31:33.003005 [info ] [MainThread]: 
+[0m17:31:33.003488 [info ] [MainThread]:   compiled Code at target/compiled/ecom/models/schema.yml/unique_OBT_ECOM_id.sql
+[0m17:31:33.004086 [info ] [MainThread]: 
+[0m17:31:33.004595 [info ] [MainThread]: Done. PASS=2 WARN=1 ERROR=0 SKIP=0 TOTAL=3
+[0m17:31:33.005653 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.84078664, "process_user_time": 4.140666, "process_kernel_time": 0.748957, "process_mem_max_rss": "550064", "process_out_blocks": "1744", "process_in_blocks": "0"}
+[0m17:31:33.006325 [debug] [MainThread]: Command `dbt test` succeeded at 17:31:33.006134 after 0.84 seconds
+[0m17:31:33.006817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742c50d570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a0b5ff0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742a191a20>]}
+[0m17:31:33.007270 [debug] [MainThread]: Flushing usage events
