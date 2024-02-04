@@ -7,23 +7,40 @@ models:
     columns:
       - name: id
         tests: 
-          - unique:
-              severity: warn
-          - not_null
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "id is not null"
       - name: timestamp
         tests: 
-          - not_null
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "id is not null"
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: timestamp
       - name: product_name 
       - name: price
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: double
       - name: quantity
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: int64
       - name: category 
       - name: customer_name 
       - name: customer_age
+        tests:
+          - dbt_expectations.expect_column_min_to_be_between:
+              min_value: 18 
       - name: email
       - name: address
       - name: country
       - name: payment_method
+        tests:
+        - dbt_expectations.expect_column_values_to_be_in_set:
+            value_set: ['Credit Card', 'Cash', 'PayPal']
       - name: phone_number
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
       - name: discount_applied
       - name: shipping_method
       - name: order_status

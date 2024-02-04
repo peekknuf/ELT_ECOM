@@ -1,2 +1,6 @@
 seeds/*
 .env
+dbt_packages/
+go_test/
+target/*
+logs/*
