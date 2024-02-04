@@ -4,3 +4,4 @@ dbt_packages/
 go_test/
 target/*
 logs/*
+dbt_project.yml
