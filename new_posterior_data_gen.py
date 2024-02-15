@@ -2,9 +2,13 @@ import os
 
 from random_data_gen import generate_batch_data, write_csv
 
+
 def create_new_csv(base_folder, base_file_name, fieldnames):
-    """Generate data and create a new CSV file based on existing files"""
-    existing_files = [f for f in os.listdir(base_folder) if os.path.isfile(os.path.join(base_folder, f))]
+    existing_files = [
+        f
+        for f in os.listdir(base_folder)
+        if os.path.isfile(os.path.join(base_folder, f))
+    ]
     index = len(existing_files) + 1
 
     file_name = os.path.join(base_folder, base_file_name.format(index))
@@ -19,11 +23,27 @@ def create_new_csv(base_folder, base_file_name, fieldnames):
 
     write_csv(file_name, fieldnames, data)
 
+
 if __name__ == "__main__":
-    base_folder = 'seeds'
-    base_file_name = 'ecommerce_data_{}.csv'
-    field_names = ['id', 'timestamp', 'product_name', 'price', 'quantity', 'category', 'customer_name', 'email',
-                   'address', 'country', 'payment_method', 'phone_number', 'discount_applied', 'shipping_method',
-                   'order_status', 'customer_age']
+    base_folder = "seeds"
+    base_file_name = "ecommerce_data_{}.csv"
+    field_names = [
+        "id",
+        "timestamp",
+        "product_name",
+        "price",
+        "quantity",
+        "category",
+        "customer_name",
+        "email",
+        "address",
+        "country",
+        "payment_method",
+        "phone_number",
+        "discount_applied",
+        "shipping_method",
+        "order_status",
+        "customer_age",
+    ]
 
     create_new_csv(base_folder, base_file_name, field_names)
