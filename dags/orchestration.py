@@ -10,7 +10,7 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
 }
 
-dag = DAG("data_workflow_with_dbt", default_args=default_args, schedule="@daily")
+dag = DAG(dag_id="data_workflow_with_dbt", default_args=default_args, schedule="@daily")
 
 generate_data = BashOperator(
     task_id="generate_data",

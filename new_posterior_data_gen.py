@@ -32,7 +32,7 @@ if __name__ == "__main__":
         "timestamp",
         "product_name",
         "price",
-        "quantity",
+        "quantity", "terminal"
         "category",
         "customer_name",
         "email",

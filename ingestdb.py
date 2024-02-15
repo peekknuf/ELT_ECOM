@@ -6,22 +6,22 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+TELEGRAM_BOT_TOKEN: str | None = os.getenv(key="TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID: str | None = os.getenv(key="TELEGRAM_CHAT_ID")
 
 
-def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+def send_telegram_message(message) -> None:
+    url: str = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     params = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
-    requests.post(url, params=params)
+    requests.post(url=url, params=params)
 
 
 try:
     conn = duckdb.connect(database="~/ecom.db", read_only=False)
-    csv_files = glob.glob("seeds/ecommerce_data_*.csv")
+    csv_files: list[str] = glob.glob(pathname="seeds/ecommerce_data_*.csv")
 
-    for idx, csv_file in enumerate(csv_files):
-        table_name = f"econ{idx}"
+    for idx, csv_file in enumerate(iterable=csv_files):
+        table_name: str = f"econ{idx}"
         conn.execute(f"DROP TABLE IF EXISTS {table_name}")
         conn.execute(
             f"CREATE TABLE IF NOT EXISTS {table_name} AS FROM read_csv_auto('{csv_file}')"
