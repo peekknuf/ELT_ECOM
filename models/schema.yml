@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: OBT_ECOM
+  - name: union_all
     description: "unified data"
     columns:
       - name: id
@@ -67,7 +67,7 @@ models:
       - name: shipping_method
       - name: order_status
 
-  - name: aggregates
+  - name: aggregates_by_month_and_year
     description: "aggregates for dashboard"
     columns:
       - name: order_year

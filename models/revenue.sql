@@ -1,3 +1,3 @@
 select *, quantity * price as revenue
-from {{ ref('OBT_ECOM') }}
+from {{ ref('union_all') }}
 
