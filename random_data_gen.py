@@ -52,9 +52,13 @@ def create_csv_file(file_name, fieldnames, num_records):
     num_batches = num_records // batch_size
 
     with Pool() as pool:
-        batch_data = pool.map(generate_batch_data, [batch_size] * num_batches)
+        batch_data = pool.map(
+            func=generate_batch_data, iterable=[batch_size] * num_batches
+        )
         flattened_data = [record for batch in batch_data for record in batch]
-        write_csv(file_name, fieldnames, flattened_data)
+        write_csv(
+            file_name=file_name, fieldnames=fieldnames, data=flattened_data
+        )
 
 
 if __name__ == "__main__":
@@ -81,5 +85,7 @@ if __name__ == "__main__":
 
     for i in range(1, 12):
         """the n of files is arbitrary"""
-        file_name = os.path.join(base_folder, base_file_name.format(i))
-        create_csv_file(file_name, field_names, num_records=1_000_000)
+        file_name: str = os.path.join(base_folder, base_file_name.format(i))
+        create_csv_file(
+            file_name=file_name, fieldnames=field_names, num_records=1_000_000
+        )
