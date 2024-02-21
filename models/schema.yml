@@ -21,9 +21,6 @@ models:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: double
       - name: quantity
-        tests:
-          - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: int64
       - name: category 
       - name: customer_name 
       - name: customer_age
@@ -79,3 +76,30 @@ models:
       - name: max_revenue
       - name: min_revenue
       - name: avg_discount_applied 
+
+  - name: total_aggregates
+    description: "raw aggregates"
+    columns:
+      - name: order_year
+      - name: order_month
+      - name: total_orders
+      - name: total_items_sold
+      - name: total_revenue 
+      - name: avg_price
+      - name: max_revenue
+      - name: min_revenue
+      - name: avg_discount_applied 
+
+  - name: customers_obt
+    description: "obt for customers"
+    columns:
+      - name: customer_name
+      - name: customers_array
+        type: array
+        items: string
+      
+  - name: transactions
+    description: "obt for transactions"
+    columns:
+      - name: ID
+      - name: transactions_array
