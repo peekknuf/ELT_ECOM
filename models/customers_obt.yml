@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: customers_obt
+    description: "This model represents customer data in array format, derived from a unified dataset."
+    columns:
+      - name: customer_name
+        description: "The name of the customer."
+        tests: 
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "customer_name is not null"
+      - name: customers_array
+        description: "An array containing customer details including customer age, email, address, country, and phone number."
+        tests:
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "customers_array is not null"

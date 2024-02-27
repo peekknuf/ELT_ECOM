@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: union_all
+    description: "This model consolidates data from various sources into a unified dataset."
+    columns:
+      - name: id
+        description: "A unique identifier for each record."
+        tests: 
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "id is not null"
+      - name: timestamp
+        description: "The date and time when the data was recorded."
+        tests: 
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "id is not null"
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: timestamp
+      - name: product_name
+        description: "The name of the product being purchased."
+      - name: price
+        description: "The price of the product."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: double
+      - name: quantity
+        description: "The quantity of the product purchased in a single transaction."
+      - name: category
+        description: "The category to which the product belongs."
+      - name: customer_name
+        description: "The name of the customer making the purchase."
+      - name: customer_age
+        description: "The age of the customer."
+        tests:
+          - dbt_expectations.expect_column_min_to_be_between:
+              min_value: 18 
+      - name: email
+        description: "The email address of the customer."
+      - name: address
+        description: "The address where the product will be delivered."
+      - name: country
+        description: "The country to which the product will be delivered."
+      - name: payment_method
+        description: "The method used by the customer to make payment."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Credit Card', 'Cash', 'PayPal']
+      - name: phone_number
+        description: "The phone number of the customer."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+      - name: discount_applied
+        description: "Any discount applied to the purchase."
+      - name: shipping_method
+        description: "The method used to ship the product."
+      - name: order_status
+        description: "The current status of the order."

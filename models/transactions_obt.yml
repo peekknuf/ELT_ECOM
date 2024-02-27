@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: transactions
+    description: "This model represents transactional data in array format, derived from a unified dataset."
+    columns:
+      - name: ID
+        description: "A unique identifier for each transaction."
+        tests: 
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "ID is not null"
+      - name: transactions_array
+        description: "An array containing transaction details including timestamp, product name, price, quantity, category, payment method, discount applied, shipping method, and order status."
+        tests:
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "transactions_array is not null"

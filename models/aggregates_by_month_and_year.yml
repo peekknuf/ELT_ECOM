@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: aggregates_by_month_and_year
+    description: "This model provides aggregated metrics for a dashboard, organized by month and year."
+    columns:
+      - name: order_year
+        description: "The year of the orders."
+        tests: 
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "order_year is not null"
+      - name: order_month
+        description: "The month of the orders."
+        tests: 
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "order_month is not null"
+      - name: total_orders
+        description: "The total number of orders in the given month and year."
+      - name: total_items_sold
+        description: "The total number of items sold in the given month and year."
+      - name: total_revenue 
+        description: "The total revenue generated in the given month and year."
+      - name: avg_price
+        description: "The average price of items sold in the given month and year."
+      - name: max_revenue
+        description: "The maximum revenue generated in a single order within the given month and year."
+      - name: min_revenue
+        description: "The minimum revenue generated in a single order within the given month and year."
+      - name: avg_discount_applied
+        description: "The average discount applied to orders within the given month and year."
