@@ -1,0 +1,6 @@
+project:
+    name: astrocheck
+postgres:
+  port: 5435
+
+

@@ -12,9 +12,9 @@ def create_new_csv(base_folder, base_file_name, fieldnames):
     index = len(existing_files) + 1
 
     file_name = os.path.join(base_folder, base_file_name.format(index))
-    num_records = 1_000_000
+    num_records = 10000
 
-    batch_size = 10000
+    batch_size = 5000
     num_batches = num_records // batch_size
 
     data = []
@@ -25,7 +25,7 @@ def create_new_csv(base_folder, base_file_name, fieldnames):
 
 
 if __name__ == "__main__":
-    base_folder = "seeds"
+    base_folder = "/usr/local/airflow/data_pipeline/seeds"
     base_file_name = "ecommerce_data_{}.csv"
     field_names = [
         "id",
