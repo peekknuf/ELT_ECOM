@@ -16,4 +16,5 @@ dags/dbt/data_pipeline/dbt_packages/
 dags/dbt/data_pipeline/go_test/
 dags/dbt/data_pipeline/target/*
 dags/dbt/data_pipeline/logs/*
+dags/dbt/data_pipeline/post/*
 dags/dbt/data_pipeline/dbt_project.yml

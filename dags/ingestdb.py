@@ -18,7 +18,7 @@ def send_telegram_message(message) -> None:
 
 try:
     conn = duckdb.connect(database="~/ecom.db", read_only=False)
-    csv_files: list[str] = glob.glob(pathname="dbt/seeds/ecommerce_data_*.csv")
+    csv_files: list[str] = glob.glob(pathname="dbt/post/ecommerce_data_*.csv")
 
     for idx, csv_file in enumerate(iterable=csv_files):
         table_name: str = f"econ{idx}"

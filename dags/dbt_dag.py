@@ -1,7 +1,9 @@
-from pendulum import datetime, duration
+from pendulum import datetime
 from airflow.operators.bash import BashOperator
 import duckdb
 import glob
+import os
+import csv
 from dotenv import load_dotenv
 from airflow.decorators import dag, task
 from new_posterior_data_gen import create_new_csv
@@ -18,7 +20,7 @@ def we_go_all_the_way():
 
     @task
     def create_new_csv_task():
-        base_folder = "/usr/local/airflow/data_pipeline/seeds"
+        base_folder = "/usr/local/airflow/post"
         base_file_name = "ecommerce_data_{}.csv"
         field_names = [
             "id",
@@ -44,13 +46,13 @@ def we_go_all_the_way():
     def ingest():
         conn = duckdb.connect(database="/home/ecom.db", read_only=False)
         csv_files: list[str] = glob.glob(
-            pathname="/usr/local/airflow/data_pipeline/seedsecommerce_data_*.csv"
+            pathname="/usr/local/airflow/post/commerce_data_*.csv"
         )
 
         for idx, csv_file in enumerate(iterable=csv_files):
             table_name: str = f"econ{idx}"
             conn.execute(
-                f"CREATE TABLE IF NOT EXISTS {table_name} AS FROM read_csv_auto('{csv_file}')"
+                f"CREATE TABLE IF NOT EXISTS {table_name} AS FROM read_csv('{csv_file}')"
             )
             print(
                 f"Table '{table_name}' created with data from '{csv_file}'"

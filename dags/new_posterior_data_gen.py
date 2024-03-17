@@ -25,7 +25,7 @@ def create_new_csv(base_folder, base_file_name, fieldnames):
 
 
 if __name__ == "__main__":
-    base_folder = "/usr/local/airflow/data_pipeline/seeds"
+    base_folder = "/home/peek/code/astrocheck/dags/dbt/data_pipeline/post"
     base_file_name = "ecommerce_data_{}.csv"
     field_names = [
         "id",
