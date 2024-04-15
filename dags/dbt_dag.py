@@ -2,8 +2,6 @@ from pendulum import datetime
 from airflow.operators.bash import BashOperator
 import duckdb
 import glob
-import os
-import csv
 from dotenv import load_dotenv
 from airflow.decorators import dag, task
 from new_posterior_data_gen import create_new_csv
@@ -17,7 +15,6 @@ from new_posterior_data_gen import create_new_csv
     default_view="graph",
 )
 def we_go_all_the_way():
-
     @task
     def create_new_csv_task():
         base_folder = "/usr/local/airflow/post"
@@ -54,9 +51,7 @@ def we_go_all_the_way():
             conn.execute(
                 f"CREATE TABLE IF NOT EXISTS {table_name} AS FROM read_csv('{csv_file}')"
             )
-            print(
-                f"Table '{table_name}' created with data from '{csv_file}'"
-            )  # intentional variable misspelling to proc the telegram message.
+            print(f"Table '{table_name}' created with data from '{csv_file}'")
 
     @task
     def run_dbt():
