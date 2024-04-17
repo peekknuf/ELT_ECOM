@@ -2,19 +2,18 @@ from pendulum import datetime
 from airflow.operators.bash import BashOperator
 import duckdb
 import glob
-from dotenv import load_dotenv
 from airflow.decorators import dag, task
 from new_posterior_data_gen import create_new_csv
 
 
 @dag(
-    dag_id="WE_GO",
+    dag_id="Im_crying",
     schedule_interval="@daily",
     start_date=datetime(2024, 1, 1),
-    default_args={"owner": "peek", "retries": 0},
+    default_args={"owner": "peek", "depends_on_past": False, "retries": 0},
     default_view="graph",
 )
-def we_go_all_the_way():
+def my_dag():
     @task
     def create_new_csv_task():
         base_folder = "/usr/local/airflow/post"
@@ -37,28 +36,27 @@ def we_go_all_the_way():
             "order_status",
             "customer_age",
         ]
+        # Assuming create_new_csv is defined elsewhere
         create_new_csv(base_folder, base_file_name, field_names)
 
     @task
     def ingest():
-        conn = duckdb.connect(database="/home/ecom.db", read_only=False)
-        csv_files: list[str] = glob.glob(
-            pathname="/usr/local/airflow/post/commerce_data_*.csv"
-        )
+        conn = duckdb.connect(database="/usr/local/airflow/ecom.db", read_only=False)
+        csv_files = glob.glob("/usr/local/airflow/post/ecommerce_data_*.csv")
 
-        for idx, csv_file in enumerate(iterable=csv_files):
-            table_name: str = f"econ{idx}"
+        for csv_file in csv_files:
+            table_name = "ecomm_bronze_0"
             conn.execute(
-                f"CREATE TABLE IF NOT EXISTS {table_name} AS FROM read_csv('{csv_file}')"
+                f"insert into {table_name} SELECT * FROM read_csv_auto('{csv_file}')"
             )
-            print(f"Table '{table_name}' created with data from '{csv_file}'")
+            print(f"The data from '{csv_file}' is inserted into '{table_name}'")
 
     @task
     def run_dbt():
         BashOperator(
             task_id="run_dbt",
             bash_command="dbt run",
-            dag=dag,
+            dag=my_dag,
         )
 
     @task
@@ -66,14 +64,15 @@ def we_go_all_the_way():
         BashOperator(
             task_id="test_dbt",
             bash_command="dbt test",
-            dag=dag,
+            dag=my_dag,
         )
 
     create_new_csv_task = create_new_csv_task()
-    ingest = ingest()
-    run_dbt = run_dbt()
-    test_dbt = test_dbt()
-    create_new_csv_task >> ingest >> run_dbt >> test_dbt
+    ingest_task = ingest()
+    run_dbt_task = run_dbt()
+    test_dbt_task = test_dbt()
+
+    create_new_csv_task >> ingest_task >> run_dbt_task >> test_dbt_task
 
 
-we_go_all_the_way()
+dag = my_dag()

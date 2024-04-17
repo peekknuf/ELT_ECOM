@@ -3,3 +3,4 @@ services:
   scheduler:
     volumes:
       - /home/peek/code/astrocheck/dags/dbt/data_pipeline/post:/usr/local/airflow/post
+      - /home/peek/ecom.db:/usr/local/airflow/ecom.db
