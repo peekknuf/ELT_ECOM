@@ -5,7 +5,7 @@ WITH customer_data AS (
     address,
     country,
     phone_number
-  FROM { { ref('union_all_silver') } }
+  FROM {{ ref('union_all_silver') }}
 )
 SELECT customer_name,
   ARRAY [customer_age, email, address, country, phone_number] AS customers_array

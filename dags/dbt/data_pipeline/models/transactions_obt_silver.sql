@@ -9,7 +9,7 @@ WITH transaction_data AS (
     discount_applied,
     shipping_method,
     order_status
-  FROM { { ref('union_all_silver') } }
+  FROM {{ ref('union_all_silver') }}
 )
 SELECT ID,
   ARRAY [timestamp, product_name, price, quantity, category, payment_method, discount_applied, shipping_method, order_status] AS transactions_array
