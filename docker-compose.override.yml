@@ -2,5 +2,6 @@ version: "3.1"
 services:
   scheduler:
     volumes:
+      - /home/peek/code/astrocheck/dags/dbt/data_pipeline/seeds:/usr/local/airflow/seeds
       - /home/peek/code/astrocheck/dags/dbt/data_pipeline/post:/usr/local/airflow/post
       - /home/peek/ecom.db:/usr/local/airflow/ecom.db

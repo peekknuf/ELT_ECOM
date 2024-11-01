@@ -62,7 +62,7 @@ def create_csv_file(file_name, fieldnames, num_records):
 
 
 if __name__ == "__main__":
-    base_folder = "dbt/seeds"
+    base_folder = "dbt/data_pipeline/seeds"
     base_file_name = "ecommerce_data_{}.csv"
     field_names = [
         "id",
@@ -87,5 +87,5 @@ if __name__ == "__main__":
         """the n of files is arbitrary"""
         file_name: str = os.path.join(base_folder, base_file_name.format(i))
         create_csv_file(
-            file_name=file_name, fieldnames=field_names, num_records=1_000_000
+            file_name=file_name, fieldnames=field_names, num_records=10_000
         )
