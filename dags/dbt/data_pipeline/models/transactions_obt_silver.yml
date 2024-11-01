@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: transactions
+  - name: transactions_obt_silver
     description: "This model represents transactional data in array format, derived from a unified dataset."
     columns:
       - name: ID

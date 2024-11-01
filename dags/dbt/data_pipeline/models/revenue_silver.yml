@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: revenue
+  - name: revenue_silver
     description: "This model is prepared for dashboard visualization, containing detailed revenue-related data."
     columns:
       - name: id

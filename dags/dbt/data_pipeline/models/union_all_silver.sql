@@ -1,3 +1,4 @@
+{ { config(materialized = 'table') } }
 select *
 from ecomm_bronze_0
 union all
@@ -39,3 +40,24 @@ from ecomm_bronze_12
 union all
 select *
 from ecomm_bronze_13
+union all
+select *
+from ecomm_bronze_1_0
+union all
+select *
+from ecomm_bronze_2_0
+union all
+select *
+from ecomm_bronze_3_0
+union all
+select *
+from ecomm_bronze_4_0
+union all
+select *
+from ecomm_bronze_6_0
+union all
+select *
+from ecomm_bronze_9_0
+union all
+select *
+from ecomm_bronze_13_0

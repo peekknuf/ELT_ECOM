@@ -1,6 +1,5 @@
 WITH transaction_data AS (
-  SELECT
-    ID,
+  SELECT ID,
     timestamp,
     product_name,
     CAST(price AS VARCHAR) AS price,
@@ -10,9 +9,8 @@ WITH transaction_data AS (
     discount_applied,
     shipping_method,
     order_status
-  FROM {{ ref('union_all') }}
+  FROM { { ref('union_all_silver') } }
 )
-SELECT
-  ID,
-  ARRAY[timestamp, product_name, price, quantity, category, payment_method, discount_applied, shipping_method, order_status] AS transactions_array
+SELECT ID,
+  ARRAY [timestamp, product_name, price, quantity, category, payment_method, discount_applied, shipping_method, order_status] AS transactions_array
 FROM transaction_data

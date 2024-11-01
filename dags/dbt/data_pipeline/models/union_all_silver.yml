@@ -1,19 +1,17 @@
 version: 2
 
 models:
-  - name: union_all
+  - name: union_all_silver
     description: "This model consolidates data from various sources into a unified dataset."
     columns:
       - name: id
         description: "A unique identifier for each record."
         tests: 
-          - dbt_expectations.expect_column_values_to_not_be_null:
-              row_condition: "id is not null"
+          - dbt_expectations.expect_column_values_to_not_be_null
       - name: timestamp
         description: "The date and time when the data was recorded."
         tests: 
-          - dbt_expectations.expect_column_values_to_not_be_null:
-              row_condition: "id is not null"
+          - dbt_expectations.expect_column_values_to_not_be_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: timestamp
       - name: product_name

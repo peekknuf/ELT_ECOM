@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: aggregates_by_month_and_year
+  - name: aggregates_by_month_and_year_gold
     description: "This model provides aggregated metrics for a dashboard, organized by month and year."
     columns:
       - name: order_year

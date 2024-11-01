@@ -1,9 +1,5 @@
-
-{{ config(materialized='view') }}
-
-
-SELECT 
-    YEAR(timestamp) AS order_year,
+{ { config(materialized = 'view') } }
+SELECT YEAR(timestamp) AS order_year,
     MONTH(timestamp) AS order_month,
     COUNT(id) AS total_orders,
     SUM(quantity) AS total_items_sold,
@@ -12,5 +8,6 @@ SELECT
     MAX(revenue) AS max_revenue,
     MIN(revenue) AS min_revenue,
     AVG(discount_applied) AS avg_discount_applied
-FROM {{ ref('revenue') }}
-GROUP BY YEAR(timestamp),MONTH(timestamp)
+FROM { { ref('revenue_silver') } }
+GROUP BY YEAR(timestamp),
+    MONTH(timestamp)
